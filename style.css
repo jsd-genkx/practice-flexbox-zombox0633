@@ -2,7 +2,7 @@
 :root {
   --clr-dark: #0f172a;
   --clr-light: #f1f5f9;
-  --clr-accent: #006666;
+  --clr-fire-engine-red: #D62828;
 }
 
 *,
@@ -12,17 +12,17 @@
 }
 
 body {
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+  height: 100vh;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  word-spacing: 1.4px;
-  font-family: sans-serif;
-  color: var(--clr-dark);
-  background-color: var(--clr-light);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  font-family: sans-serif;
+  line-height: 1.6;
+  word-spacing: 1.4px;
 }
 
 .container {
@@ -33,15 +33,15 @@ body {
 }
 
 .item {
+  background-color: var(--clr-fire-engine-red);
   width: 150px;
   height: 150px;
-  background-color: #b2d8d8;
   padding: 1em;
-  font-weight: 700;
-  color: var(--clr-dark);
-  text-align: center;
-  border: 10px solid var(--clr-accent);
+  border: 10px solid var(--clr-dark);
   border-radius: 10px;
+  color: var(--clr-light);
+  font-weight: 700;
+  text-align: center;
 }
 /* END OF BASE STYLES */
 
@@ -49,14 +49,15 @@ body {
 
 /* 2. Flex item */
 
+
 .container {
   /* Learning Point 1 */
   /* with flex we created an invisble main axis (across the screen left to right or horizontal) */
   /* we can use flex-direction: column; to switch the main axis to vertical or top to bottom  */
   /* this is the key to understanding flexbox  */
-
+  padding: 1rem;
   display: flex;
-
+  justify-content: center;
   /* flex-direction: column; */
 
   /* justify-content is for aligning the element on the main axis  (horizontal by default) */
@@ -73,16 +74,17 @@ body {
   /* by default, flex item will always try to fit in one line  */
   /* when there are more and more, the items will start crushing each other  */
   /* we can use flex-wrap: wrap; to allow items to take on a new line */
-
-  flex-wrap: wrap;
-
   /* when we have flex-wrap: wrap; a new property is unlock, the align-content property */
   /* Properties value is more or less the same as justify-content */
   /* align-content: center; */
+  overflow: hidden;
+}
 
-  /* gap: 1rem; */
-
-  /* overflow-y: scroll; */
+.container__c{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
 }
 
 .item-1 {
@@ -99,13 +101,13 @@ body {
 
 .item-3 {
   font-size: 1.5rem;
-  /* flex-grow: 1; */
+  flex-grow: 1;
   /* flex-shrink: 5; */
-  /* flex-basis: 300px; */
+  /* flex-basis: 200px; */
   /* flex combines all 3 but the last 2 are optional and will adjust responsively by default */
   /* flex: 1; */
   /* try */
   /* flex-start, flex-end, center,baseline */
-  /* align-self: baseline; */
+  align-self: baseline;
   /* order: -1; */
 }
